@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Design</title>
+    
+    <link
+    href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css"
+    rel="stylesheet"
+  />
+  <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+}
+h5{
+    font-size: medium;
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+    padding-top: 15px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-style: normal;
+    color: #5969a5;
+    
+}
+nav{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+    box-shadow: 0px 2px 2px grey;
+    
+}
+nav .nav-links ul{
+    display: flex;
+    list-style-type:none;
+}
+nav .nav-links ul li  a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 2rem;
+}
+.burger{
+     cursor: pointer;
+    font-size: large;
+    display: none;
+}
+@media(max-width:760px){
+    .burger{
+        display: block;
+    }
+    nav{
+        position: relative;
+        
+    }
+
+    
+
+   .nav-links{
+       display: none;
+   }
+    nav .nav-links ul {
+   
+   position: absolute;
+   top:5rem;
+   flex-direction: column;
+   background-color: rgb(58, 199, 58);
+   left: 0;
+   right: 0;
+   align-items: center;
+   }
+   
+   .active{
+       display: flex;
+   }
+   nav div ul li{
+       margin: 2rem;
+}
+
+}
+
+
+header{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: #c4c4c4;
+}
+header div {
+    flex-basis: 50%;
+    
+}
+.head-content{
+     padding: 2rem;
+}
+.head-content  h1{
+      padding: 1rem 0;
+}
+.image9 {
+      padding-right: 2rem;
+}
+.image9  img{
+    width: 60%;
+    height: 60%;
+
+}
+.title{
+   display: flex;
+   font-weight: bold;
+   font-style: normal;
+   justify-content: space-between;
+   padding: 2rem;
+   padding-top: 3rem;
+}
+h6{
+    color: #FC1E1E;
+    
+}
+.para1{
+    width:200px ;
+}
+.para2{
+    width:140px ;
+}
+.ctn{
+    background-color: #FC1E1E;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2px 7px;
+    text-align: center;
+    border-radius: 50px;
+    height: 10px;
+}
+@media (max-width:760px){
+    header{
+        flex-direction: column;
+    }
+    .image  img{
+        width: 60%;
+        height: 60%;
+        padding: 1rem;
+    }
+    .navigation{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .pc{
+        width: 90%;
+        
+    }
+    .nav3{
+        flex-direction: column;
+        
+    }
+    .text1{
+        align-items: center;
+        text-align: center;
+        margin-left: 4rem;
+        margin-top: 2rem;
+    }
+    .paragraph3{
+        flex-direction: column;
+     }
+    .nav-img{
+        flex-direction: column;
+    }
+}
+.picture{
+    width:25%;
+    height: 25%;
+   border-radius: 90%;
+   margin-left: 3rem;
+  margin-top: 6rem;
+  margin-bottom: 7rem;
+}
+.navigation{
+    background-color: #c4c4c4;
+    display: flex;
+    justify-content: center;
+}
+.text{
+    width: 250px;
+    margin-top:140px ;
+    margin-left: 250px;
+
+}
+.ctn1{
+   background-color: white;
+   position: absolute;
+   margin-left: 250px;
+   font-size: small;
+   font-weight: bold;
+   border-radius: 40px;
+   margin-right: 50px;
+   height: 30px;
+   width: 90px;
+   color: black;
+   text-align: center;
+   margin-top: 20px;
+   text-decoration: none;
+}
+.icon{
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 360px;
+    margin-right: 50px;
+    margin-bottom: 200px;
+    margin-top: 20px;
+}
+@media (max-width:760px) {
+    .picture{
+        width:50%;
+        height: 50%;
+       border-radius: 90%;
+       margin-left: 4rem;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+    .navigation{
+        background-color: #c4c4c4;
+        display: flex;
+        justify-content: center;
+    }
+    .text{
+        width: 250px;
+        margin-top:0px ;
+        margin-left: 25px;
+    
+    }
+    .ctn1{
+       background-color: white;
+       position: absolute;
+       margin-left: 25px;
+       font-size: small;
+       font-weight: bold;
+       border-radius: 40px;
+       margin-right: 0px;
+       height: 20px;
+       width: 90px;
+       color: black;
+       text-align: center;
+       margin-top: 20px;
+       text-decoration: none;
+      
+    }
+    .icon{
+        
+        display: flex;
+        justify-content: space-between;
+        margin-left: 130px;
+        margin-right: 70px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+
+.navig{
+  
+    background-color: #c4c4c4;
+}
+.nav-img{
+    display: flex;
+    align-items: center;
+    padding-right: 100px;
+    justify-content: space-between;
+    padding-left: 100px;
+    background-color: #c4c4c4;
+}
+.skills{
+   display: block; 
+  
+}
+.paragraph3{
+   display: flex;
+   justify-content: space-between;
+}
+.pr1{
+   font-size: medium;
+   font-weight: lighter;
+   margin-top: 5px;
+   margin-bottom: 20px; 
+   width: 150px;
+   margin-right: 120px;
+  
+}
+.pc{
+    margin-bottom: 20px;
+}
+.text2{
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-left: 60px;
+    width: 200px;
+    margin-top: 50px;
+    font-style: normal;
+}
+.pr{
+    font-size: medium;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    width: 150px;
+   font-style: normal;
+}
+#prg{
+   font-size: small;
+   font-weight: bold;
+   margin-left: 130px;
+   margin-bottom: 40px;
+   padding-bottom: 90px;
+}
+
+
+.nav1{
+   background-color: white;
+}
+.portfolio{
+    align-items: center;
+    margin-top: 50px;
+   padding-left: 20rem;
+}
+.text4{
+    text-align: center;
+    font-weight: bold;
+    width: 250px;
+    padding-top: 20px;
+    margin-left: 28rem;
+}
+
+
+@media (max-width:760px){
+    .portfolio{
+       padding-left: 0rem;
+       width: 100%;
+       height: 80%;
+    }
+    .text4{
+        margin-left: 4rem;
+    }
+    .pr{
+        font-size: medium;
+        font-weight: lighter;
+        margin-bottom: 20px;
+        margin-left: 95px;
+        width: 150px;
+       font-style: normal;
+    }
+
+    .pr1{
+        font-size: medium;
+        font-weight: lighter;
+        margin-top: 9px;
+        margin-bottom: 20px; 
+        width: 230px;
+        margin-right: 12px;
+       padding-left:6rem;
+       padding-top: 2rem;
+       padding-bottom: 2rem; 
+     }
+}
+
+
+
+.contact{
+  
+    background-color: #c4c4c4;
+}
+.message{
+   font-size: medium;
+   margin-left: 30px;
+   font-weight: lighter;
+   font-style: normal;
+   font-family: Arial, Helvetica, sans-serif;
+}
+input[type=text]{
+   width:95%;
+   margin: 10px 0;
+   box-sizing:border-box;
+   padding:0px 0px ;
+   height:40px;
+   margin-left: 30px;
+   margin-right: 15px;
+
+}
+input[type=submit]{
+   background-color: #FC1E1E;
+   color: #e5e5e5;
+   border-radius: 30px;
+   width: 20%;
+   height: 40px;
+   padding: 10px;
+   border: none;
+   text-align: center;
+   font-weight: bold;
+   margin-left: 30px;
+}
+input[type=submit]  :hover{
+   background-color: #FC1E1E;
+}
+input[type=text].subject{
+   height: 95px;
+
+}
+@media (max-width:760px){
+    
+    .message{
+       font-size: medium;
+       margin-left: 2rem;
+       font-weight: lighter;
+       font-style: normal;
+       font-family: Arial, Helvetica, sans-serif;
+    }
+    input[type=text]{
+       width:90%;
+       margin: 10px 0;
+       box-sizing:border-box;
+       padding:0px 0px ;
+       height:3rem;
+       margin-left: 15px;
+       margin-right: 15px;
+    
+    }
+    input[type=submit]{
+       background-color: #FC1E1E;
+       color: #e5e5e5;
+       border-radius: 30px;
+       width: 30%;
+       height: 40px;
+       padding: 10px;
+       border: none;
+       text-align: center;
+       font-weight: bold;
+       margin-left: 30px;
+    }
+    input[type=submit]  :hover{
+       background-color: #FC1E1E;
+    }
+    input[type=text].subject{
+       height: 95px;
+    
+    }
+}
+
+
+
+.last{
+    padding-top: 1rem;
+}
+.text5{
+    font-size: medium;
+    padding-top: 30px;
+    width: 100px;
+    font-weight: bold;
+    margin-left: 450px;
+}
+.page{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-left: 400px;
+    display: flex;
+    word-spacing: 50px;
+}
+.copyright{
+    text-align: center;
+    font-weight: lighter;
+    margin-top: 30px;
+}
+@media (max-width:760px){
+    
+.last{
+    padding-top: 3rem;
+}
+.text5{
+    font-size: medium;
+    padding-top: 30px;
+    width: 100px;
+    font-weight: bold;
+    margin-left: 4rem;
+}
+.page{
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    margin-left: 40px;
+}
+.copyright{
+    text-align: center;
+    font-weight: lighter;
+    margin-top: 30px;
+}
+
+}
+
+
+
+    
+
+.nav-log h3{
+    text-align: center;
+    padding-top: 30px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+}
+.nav-log{
+    width: 50%;
+    background-color: #c4c4c4;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+.comment{
+    font-size: medium;
+    margin-left: 35px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+input[type=button]{
+    background-color:#5969a5;
+    color: #e5e5e5;
+    border-radius: 15px;
+    width: 20%;
+    height: 50px;
+    padding: 15px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 30px;
+    font-size: large;
+    margin-top: 15px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.line{
+    width: 80%;
+    height: 2px;
+    background-color: white;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.link{
+    font-weight: lighter;
+    font-size: medium;
+    color: black;
+    font-style: normal;
+    margin-left: 30px;
+}
+.links{
+    display: inline;
+    text-decoration: underline;
+}
+.lnk{
+    display: inline;
+}
+.ln1{
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ln2{
+    margin-top: 30px;
+    padding-bottom:2rem ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type=text]{
+   width:80%;
+   margin: 10px 0;
+   box-sizing:border-box;
+   height:40px;
+   margin-left: 30px;
+   padding-right: 30px;
+   border: none;
+   border-radius: 5px;
+   font-style: normal;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 400;
+}
+::placeholder{
+  padding-left: 10px;
+  font-size: small;
+  font-weight: lighter;
+}
+@media (max-width:760px){
+    .nav-log{
+        width: 100%;
+        margin-top: 40px;
+        margin-left: 0rem;
+        margin-bottom: 30px;
+    }
+    .comment{
+        font-size: medium;
+        margin-left: 35px;
+        font-style: normal;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+    }
+    input[type=button]{
+        background-color:#5969a5;
+        color: #e5e5e5;
+        border-radius: 10px;
+        width: 40%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        text-align: center;
+        font-weight: bold;
+        margin-left: 30px;
+        font-weight: bold;
+        font-size: large;
+    }
+   
+    
+}
+/* *{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #ddd4d4;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+} */
+.blog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    border-bottom: 1px solid red;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.blog-heading  h3{
+   font-size: 1rem;
+   color: black;
+   font-weight: 600;
+  text-align: center;
+}
+
+.blog-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+}
+.blog-box{
+ width: 250px;
+ background-color: #fff;
+ margin: 20px;
+ border: 3px  solid  #ececec;
+}
+.blog-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+}
+
+.blog-text{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-text span{
+    color: red;
+    font-size: 0.9rem;
+}
+
+.blog-text .blog-title{
+    font-weight: 500;
+    font-size: 1rem;
+    color:#272727;
+}
+
+.blog-text  .blog-title:hover{
+    color: red;
+    transition: all ease  0.3s;
+}
+
+.blog-text p{
+    font-size: 0.8rem;
+    color: #9b9b9b;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-bbx-orient:vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 20px  0px;
+}
+.blog-text  a{
+    color: #0f0f0f;
+  
+}
+.ctnn{
+    font-size: small;
+    font-weight: 500;
+}
+
+.blog-text  a:hover{
+    color: red;
+    transition: all  ease 0.3s;
+}
+.image{
+    width: 100%;
+    height: 190px;
+}
+
+  </style>
+</head>
+<body>
+
+
+     
+     <nav>
+        <div class="logo">
+            PORTFOLIO
+        </div>
+        <div class="nav-links">
+    <ul>
+        <li><a href="html/home.html">Home</a></li>
+        <li><a href="html/About.html">ABout</a></li>
+        <li><a href="html/blog.html">Blog</a></li>
+        <li><a href="html/skills.html">Skills</a></li>
+        <li><a href="html/contact.html">Contact</a></li>
+        <!-- <li><a href="html/main.html">Dashboard</a></li> -->
+        <li><a href="html/login.html">Login</a></li>
+    </ul>
+        </div>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    
+
+
+ 
+   
+
+     <header>
+        <div class="head-content">
+            <h6>GET EVERY SINGLE SOLUTION</h6>
+            <h1>I'm Web Developer Nadine Fiona</h1>
+            <a href="#" class="ctn">learn more</a>
+         </div>
+       <div class="image9">
+        <img src="images/fiona.jpg" alt="" >
+       </div>
+    </header>
+
+
+    
+    
+
+   <div class="title">
+    <div class="para1">Designing With Passion While Exploring The world</div>
+    <div class="para2">Any Type Of Query & Discussion</div>
+   </div>
+   
+
+
+  
+
+   <div class="navigation">
+    <!-- <h5>About Me</h5> -->
+    <img src="images/nadine.jpg" alt="" class="picture">
+
+        <div class="blogg">
+            <h5>About Me</h5>
+            <div class="text">
+                Name:Byukusenge Nadine Fiona
+                Adress:Muhanga 
+                I am web developer and web design.
+                For information about me here is my cv
+                and socila media account where there is more 
+                about me.
+            </div >
+            <a href="" class="ctn1">MY CV</a>
+            <div class="icon">
+               <i class="fas fa-envelope"></i>
+               <i class="fab fa-github"></i>
+               <i class="fab fa-instagram-square"></i>
+               <i class="fab fa-twitter-square"></i>
+            
+           </div>
+           
+        </div>
+    </div>
+
+
+    
+    
+    
+    
+    <section class="log">
+        <div class="blog-heading">
+           
+             <h3>My  blog</h3>
+        </div>
+
+        <div class="blog-container">
+           <div class="blog-box">
+               <div class="blog-img">
+                   <img src="images/blog2.png" alt="blog" class="image">
+               </div>
+               <div class="blog-text">
+
+                  <span>20  May 2020 /web design</span>
+                  <a href="#" class="blog-title">what  has  happened   </a>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni et ipsam id eum itaque cum sequi veritatis incidunt a nam? Sequi enim voluptate beatae, culpa delectus sunt eaque nisi assumenda!</p>
+                  <a href="#" class="ctnn">Read More</a>
+               </div>
+           </div>
+
+
+
+           <div class="blog-box">
+              <div class="blog-img">
+                  <img src="images/blog1.png" alt="blog"  class="image">
+              </div>
+              <div class="blog-text">
+
+                 <span>27 Dec 2021 /Challenge</span>
+                 <a href="#" class="blog-title">what  has  happened   </a>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni et ipsam id eum itaque cum sequi veritatis incidunt a nam? Sequi enim voluptate beatae, culpa delectus sunt eaque nisi assumenda!</p>
+                 <a href="#"  class="ctnn">Read More</a>
+              </div>
+          </div>
+
+          <div class="blog-box">
+              <div class="blog-img">
+                  <img src="images/blog3.png" alt="blog" class="image">
+              </div>
+              <div class="blog-text">
+
+                 <span>2 March 2022 /Portfolio</span>
+                 <a href="#" class="blog-title">what  has  happened  </a>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni et ipsam id eum itaque cum sequi veritatis incidunt a nam? Sequi enim voluptate beatae, culpa delectus sunt eaque nisi assumenda!</p>
+                 <a href="#"  class="ctnn">Read More</a>
+              </div>
+          </div>
+        </div>
+    </section>
+
+ 
+    
+
+    <div class="navig">
+        <h5>Skills</h5>
+        <div class="text2"></div>
+            
+            <div class="paragraph3">
+
+                <div class="paragraph4">
+                    
+                <p class="pr">
+                    <strong>I am web developer</strong>
+                    I am a web developer and I am 
+                    able to develop any website 
+                    using my skills and knowledge in 
+                    developing websites.
+                </p>
+                </div>
+               <div class="paragraph5">
+                
+                <p class="pr1">
+                    <strong>I am web design</strong>
+                    I am web design where 
+                    I am able to design any website
+                    using my skills and knowledge
+                    in designing websites.
+                </p>
+               </div>
+            </div>
+        </div>
+        <div class="nav-img">
+            <div class="skills"><img src="images/html.png" alt="" > <p id="prg">70% in HTML</p></div>
+            <div class="skills"><img src="images/css.png" alt=""> <p id="prg">65% in CSS</p></div>
+            <div class="skills"><img src="images/js.png" alt=""> <P id="prg">45% in JS</P></div>
+        </div>
+    </div>
+
+
+     
+
+    <div class="nav1">
+        <h5>Portfolio</h5>
+        <div class="text4">
+            Here are image that shows some 
+            web designs and web develops.
+       </div>
+      <div >
+        <img src="images/portflio.png" alt=""  class="portfolio" >
+      
+      </div>
+    </div>
+
+
+    
+    <div class="contact">
+        <h5>Contact</h5>
+        <form action="">
+        <label for="" class="message">Name</label></br>
+        <input type="text" name="" id=""></br>
+        <label for="" class="message">Email</label></br>
+        <input type="text" name="" id=""></br>
+        <label for="" class="message">Message</label></br>
+        <input type="text" class="subject"></br>
+        <input type="submit" value="Submit">
+        </form>
+        <div class="last">
+            <div class="text5">
+                Tel:+250787599080 
+                Email:nadinefiona9@gmail.com
+            </div>
+            <div class="page">
+                Linkedln
+                Github  
+                Instagram
+            </div>
+            <div class="copyright">
+                @copyright Nadine Fiona
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div class="nav-log">
+        <form action="">
+            <h3>Login form</h3>
+            <label for="" class="comment">Email Adress:</label></br>
+        <input type="text" name="" id=""></br>
+        <label for="" class="comment">Password:</label></br>
+        <input type="text" name="" id=""></br>
+        <input type="button" value="Login">
+        </form>
+        <div class="line"></div>
+       <div class="links">
+          <div class="lnk">
+            <div class="ln1"> <a href="" class="link">I forgot password</a></div>
+            <div class="ln2"><a href="" class="link">I don't have an account</a></div> 
+          </div>
+       </div>
+    </div>
+
+  
+
+    <script src="/script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home   page</title>
+    <link
+    href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+       *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+}
+h5{
+    font-size: medium;
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+    padding-top: 15px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-style: normal;
+    color: #5969a5;
+    
+}
+nav{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+    box-shadow: 0px 2px 2px grey;
+    
+}
+nav .nav-links ul{
+    display: flex;
+    list-style-type:none;
+}
+nav .nav-links ul li  a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 2rem;
+}
+.burger{
+     cursor: pointer;
+    font-size: large;
+    display: none;
+}
+@media(max-width:760px){
+    .burger{
+        display: block;
+    }
+    nav{
+        position: relative;
+        
+    }
+
+    
+
+   .nav-links{
+       display: none;
+   }
+    nav .nav-links ul {
+   
+   position: absolute;
+   top:5rem;
+   flex-direction: column;
+   background-color: rgb(58, 199, 58);
+   left: 0;
+   right: 0;
+   align-items: center;
+   }
+   
+   .active{
+       display: flex;
+   }
+   nav div ul li{
+       margin: 2rem;
+}
+
+}
+
+
+header{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: #c4c4c4;
+}
+header div {
+    flex-basis: 50%;
+    
+}
+.head-content{
+     padding: 2rem;
+}
+.head-content  h1{
+      padding: 1rem 0;
+}
+.image9 {
+      padding-right: 2rem;
+}
+.image9  img{
+    width: 60%;
+    height: 60%;
+
+}
+.title{
+   display: flex;
+   font-weight: bold;
+   font-style: normal;
+   justify-content: space-between;
+   padding: 2rem;
+   padding-top: 3rem;
+}
+h6{
+    color: #FC1E1E;
+    
+}
+.para1{
+    width:200px ;
+}
+.para2{
+    width:140px ;
+}
+.ctn{
+    background-color: #FC1E1E;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2px 7px;
+    text-align: center;
+    border-radius: 50px;
+    height: 10px;
+}
+@media (max-width:760px){
+    header{
+        flex-direction: column;
+    }
+    .image  img{
+        width: 60%;
+        height: 60%;
+        padding: 1rem;
+    }
+    .navigation{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .pc{
+        width: 90%;
+        
+    }
+    .nav3{
+        flex-direction: column;
+        
+    }
+    .text1{
+        align-items: center;
+        text-align: center;
+        margin-left: 4rem;
+        margin-top: 2rem;
+    }
+    .paragraph3{
+        flex-direction: column;
+     }
+    .nav-img{
+        flex-direction: column;
+    }
+}
+  </style>
+</head>
+<body>
+
+
+     <!-- ******navbar******  -->
+     <nav>
+        <div class="logo">
+            PORTFOLIO
+        </div>
+        <div class="nav-links">
+    <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="#about">ABout</a></li>
+        <li><a href="html/skills.html">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="html/login.html">Login</a></li>
+    </ul>
+        </div>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    
+
+
+ 
+    
+
+     <header>
+        <div class="head-content">
+            <h6>GET EVERY SINGLE SOLUTION</h6>
+            <h1>I'm Web Developer Nadine Fiona</h1>
+            <a href="#" class="ctn">learn more</a>
+         </div>
+       <div class="image">
+        <img src="fiona.jpg" alt="" >
+       </div>
+    </header>
+
+
+   <div class="title">
+    <div class="para1">Designing With Passion While Exploring The world</div>
+    <div class="para2">Any Type Of Query & Discussion</div>
+   </div>
+
+   <script src="/script.js"></script>
+</body>
+</html>
+
