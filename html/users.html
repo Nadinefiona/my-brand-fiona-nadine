@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0"> 
+    <meta content="width=device-width,initial-scale=1" name="viewpoint" />
+    <title>dashboard</title>
+    
+    <link
+    href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css"
+    rel="stylesheet"
+  />
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.header-title h2{
+
+    display: flex;
+}
+.search-wrapper i{
+    padding-left: .6rem;
+}
+.sidebar{
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(40, 32, 150);
+    z-index: 100;
+    transition: width 300ms;
+}
+.sidebar-brand{
+   height: 50px;
+   padding: 2rem 0rem 4rem 2rem;
+   color: #fff;
+}
+
+.sidebar-brand span{
+    display: inline-block;
+    padding-right: 1rem;
+}
+.sidebar-menu li{
+   width: 100%;
+   margin-bottom: .2rem;
+   padding: .4rem;
+   padding-right: 0;
+}
+.sidebar-menu a{
+    padding-left: 1rem;
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+}
+.sidebar-menu a span:first-child{
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+.active{
+    background-color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: rgb(40, 32, 150); 
+    border-radius: 30px 0px  0px 30px;
+    padding-right: 1px;
+}
+.main-content{
+transition: margin-left 300ms;
+   margin-left: 200px; 
+}
+header  {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 2px  4px 5px rgb(40, 32, 150);
+    z-index: 100;
+     transition:left 300ms; 
+}
+.header-title{
+    display: flex;
+    justify-content: space-between;
+}
+header  label {
+    font-size: 1.5rem;
+    padding-right: .4rem;
+    margin-bottom: 1rem;
+    margin-left: 1px;
+}
+.sidebar-menu{
+    margin-top: 1rem;
+}
+.search-wrapper input{
+   padding: .5rem;
+   height: 100%;
+   border: none;
+   outline: none;
+   
+}
+.search-wrapper{
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+   margin-left: 15rem;
+}
+.search-wrapper span {
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.6rem;
+   
+}
+.user-wrapper{
+    display: flex;
+    align-items: center;
+    padding-left: 18rem;
+}
+.user-wrapper img{
+    border-radius: 50%;
+    margin-right: 2px;
+}
+.user-wrapper small{
+    display: inline-block;
+    color: rgb(40, 32, 150);
+}
+main{
+    margin-top: 25px;
+    padding: 2rem 1.5rem;
+    background: #f1f1f9;
+    min-height: calc(100vh-90px);
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 2rem;
+    margin-top: 2px;
+
+}
+.card-single{
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 2px;
+    padding-right: 0;
+
+    font-size: 1rem;
+}
+
+.card-single div:first-child span{
+   color: grey;
+
+}
+.card-single div:last-child span{
+    font-size: 1.2rem;
+    color:rgb(40, 32, 150) ;
+}
+
+table{
+    border-collapse: collapse;
+}
+.recent-grid{
+    margin-top: 3.5rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 67%  auto;
+}
+.card{
+    background: #fff;
+    border-radius: 5px;
+}
+.card-header,
+.card-body{
+    padding: 1rem;
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(55, 45, 201);
+}
+
+.card-header  button{
+    background: rgb(55, 45, 201);
+    color: #fff;
+    border-radius: 10px;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+
+}
+.pic{
+    width:40px;   
+    border-radius:90%;
+    height:40px ;
+}
+
+thead td{
+    font-weight: 700;
+}
+td{
+   padding: .5rem  1rem;
+   font-size: .9rem;
+  
+}
+tr td:last-child{
+    display: flex;
+    align-items: center;
+}
+td .status {
+   height: 10px;
+   width: 10px;
+   border-radius: 50%;
+   display: inline-block;
+}
+
+.status.purple{
+    background: purple;
+}
+.status.pink{
+    background: pink;
+}
+.status.orange{
+    background: orange;
+}
+.status.red{
+    background: red;
+}
+.status.blue{
+    background: blue;
+}
+.status.black{
+    background: black;
+}
+
+.People{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .1rem .1rem;
+}
+.info{
+    display: flex;
+    align-items: center;
+}
+.info img{
+    border-radius: 50%;
+    margin-right: .2rem;
+}
+.info h5{
+    font-size: .6rem;
+    font-weight: 600;
+    color: #222;
+}
+.info small{
+    font-weight: 400;
+    color: grey;
+    font-size: .5rem;
+}
+.contact{
+   font-size: 1rem;
+   display: inline-block;
+   margin-left: .3rem;
+   color: rgb(40, 32, 150);
+}
+#nav-toggle:checked  +  .sidebar{
+    width: 50px;
+}
+#nav-toggle:checked  +  .sidebar .sidebar-brand,
+#nav-toggle:checked  +  .sidebar li  {
+    padding-left: 1rem;
+    text-align: center;
+}
+#nav-toggle:checked  +  .sidebar li a {
+    padding-left: 0rem;
+}
+#nav-toggle:checked  +  .sidebar li a {
+    padding-right: 1rem;
+}
+
+#nav-toggle:checked  +  .sidebar .sidebar-brand h2 span:last-child,
+#nav-toggle:checked  +  .sidebar li a span:last-child{
+  display: none;
+}
+#nav-toggle:checked  ~ .main-content{
+    margin-left: 50px;
+  } 
+#nav-toggle:checked  ~  .main-content header{
+    width: calc(100%  - 50px);
+     left:50px;
+  }
+
+
+  .pcc{
+      width:20px;  
+      height:20px;
+    }
+
+
+
+@media  (max-width:760px){
+    .sidebar{
+        width: 50px;
+    }
+     .sidebar .sidebar-brand,
+     .sidebar li  {
+        padding-left: 1rem;
+        text-align: center;
+    }
+     .sidebar li a {
+        padding-left: 0rem;
+    }
+      .sidebar li a {
+        padding-right: 1rem;
+    }
+
+    .pic{
+    width:60px;   
+    border-radius:90%;
+    height:60px ;
+     }
+     .sidebar .sidebar-brand h2 span:last-child,
+     .sidebar li a span:last-child{
+      display: none;
+    }
+    .main-content{
+    margin-left: 50px;
+      } 
+     .main-content header{
+    width: calc(100%  - 50px);
+     left:50px;
+     } 
+     
+}
+@media  (max-width:1000px){
+     header{
+         margin-right: 0;
+     }
+    .cards{
+        grid-template-columns: 100%;
+    }
+    h4{
+        font-size: 1.2rem;
+    }
+    small{
+        font-size: .9rem;
+    }
+     .user-wrapper{
+        font-size: .8rem;
+    padding-left: 9rem;
+    
+}
+.iconi{
+    margin-left:20rem ;
+    
+}
+.pcc{
+      width:90px;  
+      height:90px;
+    }
+
+.pic{
+    width:90px;   
+    border-radius:90%;
+    height:90px ;
+}
+.user-wrapper img{
+    border-radius: 50%;
+    margin-right: 13px;
+}
+
+
+   *{
+    font-size: 1.8rem;
+    width: 100%;
+   }
+   .recent-grid{
+       grid-template-columns: 100%;
+   }
+   .search-wrapper{
+       display: none;
+   }
+   .sidebar{
+       left:-100% !important;
+   }
+   header h2 label{
+       background: rgb(55, 45, 201);
+       padding-left: .8rem;
+       display: inline-block;
+       margin-right: 1rem;
+       justify-content: center !important;
+       height: 90px;
+       width: 90px;
+       align-items: center;
+       border-radius: 50%;
+       color: #fff;
+       display: flex;
+
+   }
+   header  h2 span{
+    text-align: center;
+    padding-right: 0rem;
+   }
+   .main-content{
+     width: 100%;
+     margin-left: 4px;
+   }
+
+   header{
+       width: 100% !important;
+       left: 0  !important;
+   }
+   header   h2{
+      font-size: 1.5rem;
+   }
+   #nav-toggle:checked +.sidebar{
+       left:0 !important;
+       z-index: 100;
+       width: 250px;
+   }
+.info small{
+    font-size: 1rem;
+}
+.info h5{
+    font-size: 1rem;
+} 
+}
+@media  (max-width:320px){
+    .sidebar{
+        width: 50px;
+    }
+     .sidebar .sidebar-brand,
+     .sidebar li  {
+        padding-left: 1rem;
+        text-align: center;
+    }
+     .sidebar li a {
+        padding-left: 0rem;
+    }
+      .sidebar li a {
+        padding-right: 1rem;
+    }
+    
+     .sidebar .sidebar-brand h2 span:last-child,
+     .sidebar li a span:last-child{
+      display: none;
+    }
+    .main-content{
+    margin-left: 50px;
+      } 
+     .main-content header{
+    width: calc(100%  - 50px);
+     left:50px;
+     } 
+}
+
+
+h1{
+    padding-top:5rem;
+    text-align: center;
+    color:rgb(55, 45, 201); 
+    font-style: italic;
+}
+table{
+    padding: 1rem;
+    margin-top: 2rem;
+    width:40%;
+}
+.box{
+    box-shadow:  3px 1px  2px 2px rgb(55, 45, 201) ;
+    margin-left: 14rem;
+    margin-right: 18rem;
+}
+
+thead{
+    font-size: 1.2rem;
+    color: rgb(55, 45, 201);
+    font-style: italic;
+    
+}
+
+thead  td{
+   padding-left: 1rem;
+
+   padding-bottom: 1rem;
+}
+tbody td{
+
+    padding-left: 1rem;
+}
+.butonn{
+    padding-right: 1rem;
+    display: flex;
+}
+button{
+     padding: .7rem;
+     border-radius: 10px;
+     border: none;
+    
+}
+.button{
+   background-color: red;
+   color: white;
+   font-size: 1rem;
+   font-weight: 550;
+   margin-right: 10rem;
+}
+@media(max-width:1000px){
+    table{
+    padding: .1rem;
+    margin-top: 2rem;
+    width:100%;
+}
+.box{
+    margin-right: 1rem;
+    margin-left: 2rem;
+}
+}
+</style>
+</head>
+<body>
+    <input type="checkbox"  id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2 ><i class="fab fa-accusoft"></i><span>N.FIONA</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="main.html"><i class="fas fa-address-book"></i>
+                    <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="users.html"><i class="fas fa-users"></i>
+                    <span>Users</span></a>
+                </li>
+                <li>
+                    <a href="adduser.html"><i class="fas fa-user-plus"></i>
+                    <span>Add user</span></a>
+                </li>
+                <li>
+                    <a href="allpost.html"><i class="fas fa-book-reader"></i>
+                    <span>Posts</span></a>
+                </li>
+                <li>
+                    <a href="/html/home.html"><i class="fas fa-sign-out"></i>
+                    <span>Logout</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-title">
+                <h2>
+                    <label for="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                    Dashboard
+                </h2>
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="search">
+                </div>
+                <div class="user-wrapper">
+                    <img src="nadine.jpg" class="pic">
+                    <div>
+                        <h4>N.Fiona</h4>
+                        <small>Owner</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <h1>All  Users</h1>
+       <div class="box">
+           
+           <table  >
+                  <thead>
+                     <tr>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>adress</td>
+                        <td>message</td>
+                        <td>Actions</td>
+                     </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Jolly </td>
+                          <td>abc@gmail.com  </td>
+                          <td>Huye</td>
+                           <td>Good work keep it up</td>
+                          <td><button  class="button">Delete</button></td>
+                      </tr>
+
+                      <tr>
+                        <td>Keza </td>
+                        <td>abc@gmail.com  </td>
+                        <td>Muhanga</td>
+                        <td>Good work keep it up</td>
+                        <td><button class="button">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Shema  </td>
+                        <td>aa@gmail.com  </td>
+                        <td>Gasabo</td>
+                        <td>Good work keep it up</td>
+                        <td><button  class="button">Delete</button></td>
+                    </tr>
+                  </tbody>
+                  
+           </table>
+       </div>
+
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

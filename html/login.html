@@ -6,15 +6,18 @@
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0"> 
     <meta content="width=device-width,initial-scale=1" name="viewpoint" />
     <title>login   page</title>
-   
+
     <link
     href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css"
     rel="stylesheet"
   />
+
   <style>
-     body{
-    background-color: white;
-    
+
+body{
+    background-color: rgb(7, 7, 7);
+    background: url('work3.png');
+    background-size: cover;
 }
 .nav-log h3{
     text-align: center;
@@ -26,20 +29,23 @@
     padding-bottom: 20px;
 }
 .nav-log{
-    width: 50%;
+    width: 40%;
     background-color: #c4c4c4;
     margin-top: 40px;
-    margin-left: 20px;
+    margin-left: 20rem;
     margin-bottom: 30px;
 }
-.comment{
+.comment,.comment1{
     font-size: medium;
     margin-left: 35px;
     font-style: normal;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
-input[type=button]{
+.comment1{
+    margin-top: .1rem;
+}
+button{
     background-color:#5969a5;
     color: #e5e5e5;
     border-radius: 15px;
@@ -47,13 +53,18 @@ input[type=button]{
     height: 50px;
     padding: 15px;
     border: none;
+    cursor: pointer;
     text-align: center;
     font-weight: bold;
     margin-left: 30px;
     font-size: large;
-    margin-top: 15px;
+    margin-top: 5px;
     font-style: normal;
     font-family: Arial, Helvetica, sans-serif;
+    transition: 1s;
+}
+input[type=button]:hover{
+    background-color: red;
 }
 .line{
     width: 80%;
@@ -85,7 +96,7 @@ input[type=button]{
     padding-bottom:2rem ;
     font-family: Arial, Helvetica, sans-serif;
 }
-input[type=text]{
+input[type=email]{
    width:80%;
    margin: 10px 0;
    box-sizing:border-box;
@@ -97,12 +108,27 @@ input[type=text]{
    font-style: normal;
    font-family: Arial, Helvetica, sans-serif;
    font-weight: 400;
+   padding-left: 1rem;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
-::placeholder{
-  padding-left: 10px;
-  font-size: small;
-  font-weight: lighter;
-}
+
+input[type=password]{
+    width:80%;
+    margin: 10px 0;
+    box-sizing:border-box;
+    height:40px;
+    margin-left: 30px;
+    padding-right: 30px;
+    border: none;
+    border-radius: 5px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+ }
+
 @media (max-width:760px){
     .nav-log{
         width: 100%;
@@ -116,7 +142,7 @@ input[type=text]{
         margin-left: 20px;
         font-style: normal;
     }
-    input[type=button]{
+    button{
         background-color:#5969a5;
         color: #e5e5e5;
         border-radius: 10px;
@@ -126,7 +152,7 @@ input[type=text]{
         border: none;
         text-align: center;
         font-weight: bold;
-        margin-left: 30px;
+        margin-left: 15px;
         font-weight: bold;
         font-size: large;
     }
@@ -162,35 +188,128 @@ input[type=text]{
         font-family: Arial, Helvetica, sans-serif;
     }
     
-} 
+}
+.form-control input{
+    display: block;
+    margin-bottom: -21px;
+}
+.form-control.success input{
+    border:2px solid rgb(4, 252, 4);
+}
+.form-control.error input{
+   border: 2px  solid red;
+}
+.form-control i{
+    position: absolute;
+    right: 31.5rem;
+    visibility: hidden;
+    margin-top: -1.7rem;
+}
+small{
+    margin-left: 2rem;
+    color: red;
+    visibility: hidden;
+}
+.form-control.success i.fa-check-circle{
+   visibility: visible;
+   color: rgb(4, 252, 4);
+}
+.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: red;
+}
+.form-control.error small{
+    visibility: visible;
+}
   </style>
 </head>
 <body>
-    
     <nav class="nav-log">
-        <form action="">
-            <h3>Login form</h3>
-            <label for="" class="comment">Email or Phone</label></br>
-        <input type="text" name="" id="" placeholder="email or phone"></br>
-        <label for="" class="comment">Password</label></br>
-        <input type="text" name="" id="" placeholder="........."></br>
-        <a href="main.html"><input type="button" value="Login"></a>
+        <form class="form"   id="form"  >
+        <h3>Login form</h3>
+        <label for="" class="comment">Email Address</label></br>
+       <div class="form-control">
+         <input type="email" name="email" id="email"></br>
+         <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small></b>
+       </div>
+        <label for="" class="comment1">Password</label></br>
+      <div class="form-control">
+         <input type="password" name="password" id="password"></br>
+         <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small></b>
+      </div>
+        <a href="/main.html"> <button type="submit">Login</button></a>
         </form>
         <div class="line"></div>
-       
-          <div class="lnk">
-            <div class="ln1"> <a href="/html/forgot.html
-                
-                
-                
-                
-                
-                " class="link">I forgot password</a></div>
+        <div class="lnk">
+            <div class="ln1"> <a href="/html/forgot.html" class="link">I forgot password</a></div>
             <div class="ln2"><a href="/html/signup.html" class="link">I don't have an account</a></div> 
-          </div>
-      
+        </div>
     </nav>
+    <script>
+       
+const form  =  document.getElementById('form');
+const email  =  document.getElementById('email');
+const password  =  document.getElementById('password');
 
-    <script src="/script.js"></script>
+
+
+form.addEventListener('submit',(e) => {
+    e.preventDefault();
+
+    checkInputs();
+    
+
+
+        // ok.addEventListener("click" , ()  => {
+        //     popup.style.display  = "none";
+        //     window.location.href = "/html/main.html";
+        // });
+    
+});
+function checkInputs(){
+   const emailValue = email.value.trim();
+   const passwordValue = password.value.trim();
+
+
+   if (emailValue  ===  '') {
+       setErrorfor(email,  'Email cannot be blank');
+   }
+
+    else if(!isEmail(emailValue)){
+       setErrorfor(email,'Email is invalid')
+     } 
+    else {
+       setSuccessfor(email);
+   }
+
+   if (passwordValue == '') {
+       setErrorfor(password, 'Password cannot be blank');
+   } else {
+       setSuccessfor(password);
+   }
+
+}
+function  setErrorfor(input,message){
+  const formControl  = input.parentElement;
+  const small =  formControl.querySelector('small');
+
+
+  small.innerText =  message;
+
+ formControl.className = 'form-control error';
+}
+function setSuccessfor(input){
+    const formControl  = input.parentElement;
+    formControl.className = 'form-control success';
+}
+function  isEmail(email){
+    return /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ .test(email);
+    
+}
+    </script>
 </body>
 </html>

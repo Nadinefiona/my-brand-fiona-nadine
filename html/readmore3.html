@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Design</title>
+    
+    <link
+    href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css"
+    rel="stylesheet"
+  />
+  <style>
+      .blog-img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     object-position: center;
+     padding-left: 20rem;
+   }
+   .image{
+      width: 50%;
+      height: 50%;
+   }
+   
+   .blog-text{
+      
+       display: flex;
+       flex-direction: column;
+       padding-left: 20rem;
+       padding-right: 15rem;
+   }
+   
+   .blog-text span{
+       color: red;
+       font-size: 0.8rem; 
+       font-family: Arial, Helvetica, sans-serif;
+       padding-top: .5rem;
+       font-style: italic;
+   }
+   
+   .blog-text .blog-title{
+       font-weight: 500;
+       font-size: .8rem;
+       color:#272727;
+   }
+   
+   .blog-text  .blog-title:hover{
+       color: red;
+       transition: all ease  0.3s;
+   }
+   
+   .blog-text p{
+       font-size: 1rem;
+       color: #9b9b9b;
+       display: -webkit-box;
+       -webkit-line-clamp: 3;
+       -webkit-bbx-orient:vertical;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       margin: 15px  0px;
+      
+   }
+   .blog-text  a{
+        color: #0f0f0f;
+        text-decoration: none;
+        font-weight: 500;
+        font-style: normal;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-top: .5rem;
+   }
+
+   @media(max-width:760px){
+    .blog-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        padding-left: 1rem;
+      }
+      
+      .blog-text{
+         
+          display: flex;
+          flex-direction: column;
+          padding-left: 1rem;
+          padding-right: 1rem;
+      }
+      
+      .blog-text span{
+          color: red;
+          font-size: 0.8rem; 
+          font-family: Arial, Helvetica, sans-serif;
+          padding-top: .5rem;
+          font-style: italic;
+      }
+      
+      .blog-text .blog-title{
+          font-weight: 500;
+          font-size: .8rem;
+          color:#272727;
+      }
+      
+      .blog-text  .blog-title:hover{
+          color: red;
+          transition: all ease  0.3s;
+      }
+      
+      .blog-text p{
+          font-size: 1rem;
+          color: #9b9b9b;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-bbx-orient:vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin: 15px  0px;
+         
+      }
+      .blog-text  a{
+           color: #0f0f0f;
+           text-decoration: none;
+           font-weight: 500;
+           font-style: normal;
+           font-family: Arial, Helvetica, sans-serif;
+           padding-top: .1rem;
+      }
+      .image{
+        width: 90%;
+        height: 100%;
+     }
+
+   }
+
+  
+  .button{
+     font-size: 2.5rem;
+     padding-left: 5rem;
+  }
+
+  input[type=text]{
+      height: 7rem;
+      
+      
+  }
+  input[type=button]{
+      width: 15%;
+     margin-top: 4px;
+  }
+  ::placeholder{
+     font-size: 1rem;
+     margin-top: 10rem;
+  }
+  h4{
+    font-style: normal;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1px;
+
+    margin-top: 2px;
+  }
+  .line{
+     background-color: black;
+     height: 3px;
+     width: 8%;
+    margin-left: 15px;
+  }
+ .ii{
+     margin-bottom: 20px;
+ }
+ .pic{
+     width: 20%;
+     height:20% ;
+     border-radius: 90%;
+ }
+ .single-blog{
+    display: flex;
+    margin-bottom: 2rem;
+ }
+
+ .comment{
+     padding-left: 1.5rem;
+ }
+
+ .reply{
+     color: red;
+     padding-left: 23rem;
+    font-style: normal;
+    padding-top: 1px;
+ }
+  </style>
+</head>
+<body>
+    <div class="blog-container">
+        <!-- <div class="blog-box">
+            <div class="blog-img">
+                <img src="blog2.png" alt="blog" class="image">
+            </div>
+            <div class="blog-text">
+
+               <span>20  May 2020 /web design</span>
+               <a href="#" class="blog-title">what  has  happened   </a>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cupiditate, hic, culpa consectetur nostrum, vitae quis quos necessitatibus corrupti unde eveniet tenetur dicta porro perferendis. Atque veniam dolorem voluptates explicabo!
+                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur inventore totam adipisci quasi, autem assumenda minima beatae hic magnam ullam. Provident ea ex assumenda commodi optio accusantium, numquam natus odit?
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit impedit assumenda nobis mollitia ut cumque voluptate itaque pariatur delectus quos est optio nulla vel, nesciunt dolorum necessitatibus modi architecto rem!
+               </p>
+               
+            </div>
+        </div> -->
+
+
+<!-- 
+        <div class="blog-box">
+           <div class="blog-img">
+               <img src="images/blog1.png" alt="blog"  class="image">
+           </div>
+           <div class="blog-text">
+
+              <span>27 Dec 2021 /Challenge</span>
+              <a href="#" class="blog-title">what  has  happened   </a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cupiditate, hic, culpa consectetur nostrum, vitae quis quos necessitatibus corrupti unde eveniet tenetur dicta porro perferendis. Atque veniam dolorem voluptates explicabo!</p>
+              <a href="#"  class="ctnn">Read More</a>
+           </div>
+       </div> -->
+
+       <div class="blog-box">
+        <div class="button"><a href="/html/home.html"><i class="fas fa-arrow-circle-left"></i></a></div>
+           <div class="blog-img">
+               <img src="blog3.png" alt="blog" class="image">
+           </div>
+           <div class="blog-text">
+
+              <span>2 March 2022 /Portfolio</span>
+              <a href="#" class="blog-title">what  has  happened  </a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cupiditate, hic, culpa consectetur nostrum, vitae quis quos necessitatibus corrupti unde eveniet tenetur dicta porro perferendis. Atque veniam dolorem voluptates explicabo!
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur inventore totam adipisci quasi, autem assumenda minima beatae hic magnam ullam. Provident ea ex assumenda commodi optio accusantium, numquam natus odit?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit impedit assumenda nobis mollitia ut cumque voluptate itaque pariatur delectus quos est optio nulla vel, nesciunt dolorum necessitatibus modi architecto rem!
+            </p>
+            <div>
+                <div class="ii">
+                 <h4> Comments</h4>
+                 <div class="line"></div>
+                </div>
+                <div class="message">
+                    <div  class="single-blog">
+                        <img src="fiona copy.jpg" alt=""  class="pic">
+                        <div class="comment">
+                         <p>Good  Designs so far  keep  designing and developing websites
+                            and you have  to  work had so that you may have more good designs.
+                            keep working never giveup and  make  more research you'll make it.  
+                         </p>
+                         <i class="fas fa-heart"></i>7
+                         <a href=""> <div class="reply">reply</div></a>
+                        </div>
+                    </div>
+                    <div  class="single-blog">
+                        <img src="fiona copy.jpg" alt=""  class="pic">
+                        <div class="comment">
+                         <p>Good  Designs so far  keep  designing and developing websites
+                            and you have  to  work had so that you may have more good designs.
+                            keep working never giveup and  make  more research you'll make it.  
+                         </p>
+                         <i class="fas fa-heart"></i>10
+                         <a href=""> <div class="reply">reply</div></a>
+                        </div>
+                    </div>
+                    <div  class="single-blog">
+                        <img src="fiona copy.jpg" alt=""  class="pic">
+                        <div class="comment">
+                         <p>Good  Designs so far  keep  designing and developing websites
+                            and you have  to  work had so that you may have more good designs.
+                            keep working never giveup and  make  more research you'll make it.  
+                         </p>
+                         <i class="fas fa-heart"></i>5
+                         <a href=""> <div class="reply">reply</div></a>
+                        </div>
+                    </div>
+                    
+                </div>
+             </div>
+             <input type="text" name="" id=""  placeholder="Enter your comment here"/>
+             <input type="button" value="Send">
+            
+           </div>
+       </div>
+     </div>
+</body>
+
+</html>

@@ -14,34 +14,42 @@
       font-style: normal;
       font-family: Arial, Helvetica, sans-serif;
       border: none;
+      
+    }
+
+    body{
+      background: url(work3.png);
+      background-size: cover;
     }
     .forgot{
-        width: 40%;
+        width: 35%;
         background-color: #c4c4c4;
         align-items: center;
-        margin-left: 21rem;
-        height: 26rem;
+        margin-left: 28rem;
+        height: 30rem;
+        margin-top: 3rem;
     }
     h3{
         padding-left: 5rem;
         padding-top: 40px;
         font-size: 1.5rem;
-        padding-bottom: 20px;
+        padding-bottom: 15px;
         font-weight: 600;
     }
     ::placeholder{
     font-weight: 300;
-     font-size: .6rem;
+     font-size: .8rem;
     }
-    input[type=text]{
+    input[type=text],input[type=password]{
         width: 70%;
         margin-left: 50px;
+        padding-left: 1rem;
     }
 
-    input[type=button]{
+    button{
         margin-left: 50px;
-        margin-top: 10px;
-        height: 25px;
+        margin-top: 2px;
+        height: 30px;
         width: 100px;
         border: 0;
         border-radius: 20px;
@@ -50,26 +58,155 @@
         font-weight: 600;
     }
     .type{
-      margin-bottom: 20px;
-      font-size: 1rem;
+      margin-bottom: 2px;
+      font-size: .8rem;
       font-weight: 300;
       height: 2rem;
       border-radius: 1px;
     }
+    @media (max-width:760px){
+      .forgot{
+        width: 100%;
+        margin-left: .1rem;
+        margin-right: .4rem;
+    }
+    }
+
+    .form-control input{
+    display: block;
+    margin-bottom: -.6rem;
+}
+.form-control.success input{
+    border:2px solid rgb(4, 252, 4);
+}
+.form-control.error input{
+   border: 2px  solid red;
+}
+.form-control i{
+    position: absolute;
+    margin-top: -40px;
+    right: 435px;
+    visibility: hidden;
+}
+small{
+    margin-left: 3.3rem;
+    top: 0;
+    color: red;
+    visibility: hidden;
+}
+.form-control.success i.fa-check-circle{
+   visibility: visible;
+   color: rgb(4, 252, 4);
+}
+.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: red;
+}
+.form-control.error small{
+    visibility: visible;
+}
   </style>
 </head>
 <body>
     <div class="forgot">
-        <form action="">
+        <form id="form">
             <h3>Forgot password?</h3>
             
-            <input type="text" placeholder="Email address"  class="type"></br>
-            <input type="text" placeholder="Verification code"  class="type"></br>
-            <input type="text" placeholder="New password" class="type"></br>
-            <input type="text" placeholder="Confirm password" class="type"></br>
-            <input type="button" value="Submit"></br>
+        <div class="form-control">
+            <input type="text" placeholder="Email address"  class="type" id="email"></br>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error</small></b>
+        </div>
+        <div class="form-control">
+            <input type="text" placeholder="Verification code"  class="type"  id="code"></br>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error</small></b>
+        </div>
+        <div class="form-control">
+            <input type="password" placeholder="New password" class="type"  id="password"></br>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error</small></b>
+        </div>
+        <div class="form-control">
+            <input type="password" placeholder="Confirm password" class="type"  id="password1"></br>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error</small></b>
+        </div>
+            <button type="submit">Submit</button>
         </form>
     </div>
+
+
+    <script>
+
+const form  =  document.getElementById('form');
+const email  =  document.getElementById('email');
+const code  =  document.getElementById('code');
+const password  =  document.getElementById('password');
+const password1  =  document.getElementById('password1');
+
+
+form.addEventListener('submit',(e) => {
+    e.preventDefault();
+
+    checkInputs();
+});
+function checkInputs(){
+   const emailValue = email.value.trim();
+   const codeValue = code.value.trim();
+   const passwordValue = password.value.trim();
+   const password1Value = password1.value.trim();
+
+   if (emailValue  ===  '') {
+       setErrorfor(email,  'Email cannot be blank');
+   }
+   else if(!isEmail(emailValue)){
+       setErrorfor(email,'Email is invalid')
+     } 
+    else {
+       setSuccessfor(email);
+   }
+
+   if (codeValue == '') {
+       setErrorfor(code, 'Code cannot be blank');
+   } else {
+       setSuccessfor(code);
+   }
+   
+   if (passwordValue == '') {
+       setErrorfor(password, 'Password cannot be blank');
+   } else {
+       setSuccessfor(password);
+   }
+
+    if (password1Value == '') {
+       setErrorfor(password1, 'Password cannot be blank');
+    }else if(passwordValue !== password1Value){
+        setErrorfor(password1, 'Password are different');
+    } else {
+        setSuccessfor(password1);
+    }
+}
+function  setErrorfor(input,message){
+  const formControl  = input.parentElement;
+  const small =  formControl.querySelector('small');
+
+
+  small.innerText =  message;
+
+ formControl.className = 'form-control error';
+}
+function setSuccessfor(input){
+    const formControl  = input.parentElement;
+    formControl.className = 'form-control success';
+}
+function  isEmail(email){
+    return /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ .test(email);
+}
+    </script>
 </body>
 </html>
-

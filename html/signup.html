@@ -12,21 +12,31 @@
     rel="stylesheet"
   />
  <style>
-
+body{
+    background: url(work3.png);
+    background-size: cover;
+}
 .page{
-    width: 50%;
+    width: 40%;
     background-color: #c4c4c4;
     margin-top: 40px;
-    margin-left: 250px;
+    margin-left: 21rem;
     margin-bottom: 30px;
 }
 ::placeholder{
-    padding-left: 10px;
+    
     font-size: small;
     font-weight: lighter;
 }
-input[type=text]{
+
+
+input[type=password]{
+    font-size: 1.3rem;
+}
+input[type=email],input[type=password]{
     width:70%;
+
+    padding-left: 1.2rem;
     margin: 10px 0;
     box-sizing:border-box;
     height:40px;
@@ -38,7 +48,7 @@ input[type=text]{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
  }
- input[type=button]{
+ button{
     background-color:red;
     color: #e5e5e5;
     border-radius: 15px;
@@ -72,17 +82,130 @@ input[type=text]{
     }
     
 }
+
+
+.form-control input{
+    display: block;
+}
+.form-control.success input{
+    border:2px solid rgb(4, 252, 4);
+}
+.form-control.error input{
+   border: 2px  solid red;
+}
+.form-control i{
+    position: absolute;
+    margin-top: -40px;
+    right: 480px;
+    visibility: hidden;
+}
+small{
+    margin-left: 5.3rem;
+    top: 0;
+    color: red;
+    visibility: hidden;
+}
+.form-control.success i.fa-check-circle{
+   visibility: visible;
+   color: rgb(4, 252, 4);
+}
+.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: red;
+}
+.form-control.error small{
+    visibility: visible;
+}
  </style>
 </head>
 <body>
     <nav class="page">
-        <form action="">
+        <form class="form" id="form">
             <h3>Signup form</h3>
-            <input type="text" placeholder="Email adress" ></b>
-            <input type="text" placeholder="Password" ></b>
-            <input type="text" placeholder="Confirm password"></b>
-            <input type="button" value="Signup">
+
+            <div class="form-control ">
+               <input type="email" placeholder="Email adress" id="email" >
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error</small></b>
+            </div>
+
+            <div class="form-control ">
+                <input type="password" placeholder="Password " id="password">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error</small></b>
+            </div>
+           
+
+            <div class="form-control">
+                <input type="password" placeholder="Confirm password"  id="password1">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                 <small>Error</small></b>
+            </div>
+           <button type="submit">Signup</button>
         </form>
     </nav>
+    <script >
+
+const form  =  document.getElementById('form');
+const email  =  document.getElementById('email');
+const password  =  document.getElementById('password');
+const password1  =  document.getElementById('password1');
+
+
+form.addEventListener('submit',(e) => {
+    e.preventDefault();
+
+    checkInputs();
+});
+function checkInputs(){
+   const emailValue = email.value.trim();
+   const passwordValue = password.value.trim();
+   const password1Value = password1.value.trim();
+
+   if (emailValue  ===  '') {
+       setErrorfor(email,  'Email cannot be blank');
+   }
+   else if(!isEmail(emailValue)){
+       setErrorfor(email,'Email is invalid')
+     } 
+    else {
+       setSuccessfor(email);
+   }
+
+   if (passwordValue == '') {
+       setErrorfor(password, 'Password cannot be blank');
+   } else {
+       setSuccessfor(password);
+   }
+
+    if (password1Value == '') {
+       setErrorfor(password1, 'Password cannot be blank');
+    }else if(passwordValue !== password1Value){
+        setErrorfor(password1, 'Password are different');
+    } else {
+        setSuccessfor(password1);
+    }
+}
+function  setErrorfor(input,message){
+  const formControl  = input.parentElement;
+  const small =  formControl.querySelector('small');
+
+
+  small.innerText =  message;
+
+ formControl.className = 'form-control error';
+}
+function setSuccessfor(input){
+    const formControl  = input.parentElement;
+    formControl.className = 'form-control success';
+}
+function  isEmail(email){
+    return /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ .test(email);
+}
+    </script>
 </body>
 </html>
+

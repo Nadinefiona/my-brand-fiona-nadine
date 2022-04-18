@@ -6,15 +6,13 @@
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0"> 
     <meta content="width=device-width,initial-scale=1" name="viewpoint" />
     <title>dashboard</title>
+    
     <link
     href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css"
     rel="stylesheet"
   />
-
-  <style>
-
-      
-*{
+<style>
+    *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -23,8 +21,15 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
+.header-title h2{
+
+    display: flex;
+}
+.search-wrapper i{
+    padding-left: .6rem;
+}
 .sidebar{
-    width: 330px;
+    width: 200px;
     position: fixed;
     height: 100%;
     left: 0;
@@ -34,18 +39,19 @@
     transition: width 300ms;
 }
 .sidebar-brand{
-   height: 90px;
-   padding: 1rem 0rem 1rem 2rem;
+   height: 50px;
+   padding: 2rem 0rem 4rem 2rem;
    color: #fff;
 }
+
 .sidebar-brand span{
     display: inline-block;
     padding-right: 1rem;
 }
 .sidebar-menu li{
    width: 100%;
-   margin-bottom: 3rem;
-   padding: 1rem;
+   margin-bottom: .2rem;
+   padding: .4rem;
    padding-right: 0;
 }
 .sidebar-menu a{
@@ -58,7 +64,7 @@
     font-size: 1.5rem;
     padding-right: 1rem;
 }
-.sidebar-menu a.active{
+.active{
     background-color: #fff;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -68,7 +74,7 @@
 }
 .main-content{
 transition: margin-left 300ms;
-   margin-left: 330px; 
+   margin-left: 200px; 
 }
 header  {
     display: flex;
@@ -76,15 +82,17 @@ header  {
     padding: 1rem;
     box-shadow: 2px  4px 5px rgb(40, 32, 150);
     z-index: 100;
-    transition:left 300ms;
+     transition:left 300ms; 
 }
 .header-title{
     display: flex;
     justify-content: space-between;
 }
-header  label span{
-    font-size: 1.7rem;
-    padding-right: 1rem;
+header  label {
+    font-size: 1.5rem;
+    padding-right: .4rem;
+    margin-bottom: 1rem;
+    margin-left: 1px;
 }
 .sidebar-menu{
     margin-top: 1rem;
@@ -103,7 +111,7 @@ header  label span{
     display: flex;
     align-items: center;
     overflow-x: hidden;
-   margin-left: 7rem;
+   margin-left: 15rem;
 }
 .search-wrapper span {
     display: inline-block;
@@ -114,7 +122,7 @@ header  label span{
 .user-wrapper{
     display: flex;
     align-items: center;
-    padding-left: 7rem;
+    padding-left: 18rem;
 }
 .user-wrapper img{
     border-radius: 50%;
@@ -144,13 +152,16 @@ main{
     padding: 2rem;
     border-radius: 2px;
     padding-right: 0;
+
+    font-size: 1rem;
 }
+
 .card-single div:first-child span{
    color: grey;
 
 }
 .card-single div:last-child span{
-    font-size: 3rem;
+    font-size: 1.2rem;
     color:rgb(40, 32, 150) ;
 }
 
@@ -186,7 +197,11 @@ table{
     padding: .5rem 1rem;
 
 }
-
+.pic{
+    width:40px;   
+    border-radius:90%;
+    height:40px ;
+}
 
 thead td{
     font-weight: 700;
@@ -257,7 +272,7 @@ td .status {
    color: rgb(40, 32, 150);
 }
 #nav-toggle:checked  +  .sidebar{
-    width: 70px;
+    width: 50px;
 }
 #nav-toggle:checked  +  .sidebar .sidebar-brand,
 #nav-toggle:checked  +  .sidebar li  {
@@ -276,15 +291,148 @@ td .status {
   display: none;
 }
 #nav-toggle:checked  ~ .main-content{
-    margin-left: 70px;
+    margin-left: 50px;
   } 
 #nav-toggle:checked  ~  .main-content header{
-    width: calc(100%  - 70px);
-     left:70px;
+    width: calc(100%  - 50px);
+     left:50px;
   }
+
+
+  .pcc{
+      width:20px;  
+      height:20px;
+    }
+
+
+
 @media  (max-width:760px){
     .sidebar{
-        width: 70px;
+        width: 50px;
+    }
+     .sidebar .sidebar-brand,
+     .sidebar li  {
+        padding-left: 1rem;
+        text-align: center;
+    }
+     .sidebar li a {
+        padding-left: 0rem;
+    }
+      .sidebar li a {
+        padding-right: 1rem;
+    }
+
+    .pic{
+    width:60px;   
+    border-radius:90%;
+    height:60px ;
+     }
+     .sidebar .sidebar-brand h2 span:last-child,
+     .sidebar li a span:last-child{
+      display: none;
+    }
+    .main-content{
+    margin-left: 50px;
+      } 
+     .main-content header{
+    width: calc(100%  - 50px);
+     left:50px;
+     } 
+     
+}
+@media  (max-width:1000px){
+    .cards{
+        grid-template-columns: 100%;
+    }
+    h4{
+        font-size: 1.2rem;
+    }
+    small{
+        font-size: .9rem;
+    }
+     .user-wrapper{
+        font-size: .8rem;
+    padding-left: 9rem;
+    
+}
+.iconi{
+    margin-left:20rem ;
+    
+}
+.pcc{
+      width:90px;  
+      height:90px;
+    }
+
+.pic{
+    width:90px;   
+    border-radius:90%;
+    height:90px ;
+}
+.user-wrapper img{
+    border-radius: 50%;
+    margin-right: 13px;
+}
+
+
+   *{
+    font-size: 1.8rem;
+    width: 100%;
+   }
+   .recent-grid{
+       grid-template-columns: 100%;
+   }
+   .search-wrapper{
+       display: none;
+   }
+   .sidebar{
+       left:-100% !important;
+   }
+   header h2 label{
+       background: rgb(55, 45, 201);
+       padding-left: .8rem;
+       display: inline-block;
+       margin-right: 1rem;
+       justify-content: center !important;
+       height: 90px;
+       width: 90px;
+       align-items: center;
+       border-radius: 50%;
+       color: #fff;
+       display: flex;
+
+   }
+   header  h2 span{
+    text-align: center;
+    padding-right: 0rem;
+   }
+   .main-content{
+     width: 100%;
+     margin-left: 4px;
+   }
+
+   header{
+       width: 100% !important;
+       left: 0  !important;
+   }
+   header   h2{
+      font-size: 1.5rem;
+   }
+   #nav-toggle:checked +.sidebar{
+       left:0 !important;
+       z-index: 100;
+       width: 250px;
+   }
+.info small{
+    font-size: 1rem;
+}
+.info h5{
+    font-size: 1rem;
+} 
+}
+@media  (max-width:320px){
+    .sidebar{
+        width: 50px;
     }
      .sidebar .sidebar-brand,
      .sidebar li  {
@@ -303,14 +451,14 @@ td .status {
       display: none;
     }
     .main-content{
-    margin-left: 70px;
+    margin-left: 50px;
       } 
      .main-content header{
-    width: calc(100%  - 70px);
-     left:70px;
+    width: calc(100%  - 50px);
+     left:50px;
      } 
 }
-@media  (max-width:760px){
+@media  (max-width:480px){
     .cards{
         grid-template-columns: 100%;
     }
@@ -356,29 +504,40 @@ td .status {
    #nav-toggle:checked +.sidebar{
        left:0 !important;
        z-index: 100;
-       width: 330px;
+       width: 250px;
    }
 }
-  </style>
+</style>
+
 </head>
 <body>
     <input type="checkbox"  id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
-            <h2><i class="fab fa-accusoft"></i>Portfolio</h2>
+            <h2 ><i class="fab fa-accusoft"></i><span>N.FIONA</span></h2>
         </div>
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active"><span></span>
+                    <a href=""><i class="fas fa-address-book"></i>
                     <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span></span>
-                    <span>Home</span></a>
+                    <a href="users.html"><i class="fas fa-users"></i>
+                    <span>Users</span></a>
                 </li>
                 <li>
-                    <a href="/html/index.html"><span></span>
+                    <a href="adduser.html"><i class="fas fa-user-plus"></i>
+                    <span>Add user</span></a>
+                </li>
+                <li>
+                    <a href="allpost.html"><i class="fas fa-book-reader"></i>
+                    <span>Posts</span></a>
+                </li>
+                
+
+                <li>
+                    <a href="/html/home.html"><i class="fas fa-sign-out"></i>
                     <span>Logout</span></a>
                 </li>
                 
@@ -400,10 +559,10 @@ td .status {
                     <input type="search" placeholder="search">
                 </div>
                 <div class="user-wrapper">
-                    <img src="nadine.jpg" width="40px"   border-radius="90%" height="40px" alt="">
+                    <img src="nadine.jpg" class="pic">
                     <div>
-                        <h4>Nadine Fiona</h4>
-                        <small>Super Owner</small>
+                        <h4>N.Fiona</h4>
+                        <small>Owner</small>
                     </div>
                 </div>
             </div>
@@ -413,34 +572,34 @@ td .status {
                 <div class="card-single">
                     <div>
                         <h4>20</h4>
-                        <span>Portfolio</span>
+                        <span>Posts</span>
                     </div>
-                    <i class="fas fa-project-diagram"></i>
+                    
                 </div>
 
                 <div class="card-single">
                     <div>
-                        <h4>15</h4>
-                        <span>Tasks</span>
+                        <h4>70</h4>
+                        <span>Views</span>
                     </div>
                     
-                    <i class="fas fa-clipboard"></i>
+                    
                 </div>
                 <div class="card-single">
                     <div>
                         <h4>19</h4>
-                        <span>Challenge</span>
+                        <span>Comments</span>
                     </div>
                     
-                    <i class="fas fa-clipboard"></i>
+                   
                 </div>
                 <div class="card-single">
                     <div>
-                        <h4>5</h4>
-                        <span>Projects</span>
+                        <h4>11</h4>
+                        <span>Users</span>
                     </div>
                     
-                    <i class="fas fa-clipboard"></i>
+                    
                 </div>
 
             </div>
@@ -525,7 +684,7 @@ td .status {
                         <div class="card-body">
                             <div class="People">
                                 <div  class="info">
-                                    <img src="nadine.jpg" alt=""  width="20px"  height="20px">
+                                    <img src="nadine.jpg" alt="" class="pcc">
                                     <div>
                                     <h5>Ishimwe</h5>
                                     <small>CEO</small>
@@ -539,7 +698,7 @@ td .status {
                             </div>
                             <div class="People">
                                 <div class="info">
-                                    <img src="nadine.jpg" alt=""  width="20px"  height="20px">
+                                    <img src="nadine.jpg" alt=""  class="pcc">
                                     <div>
                                     <h5>Ishimwe</h5>
                                     <small>CEO</small>
@@ -553,7 +712,7 @@ td .status {
                             </div>
                             <div class="People">
                                 <div class="info">
-                                    <img src="nadine.jpg" alt=""  width="20px"  height="20px">
+                                    <img src="nadine.jpg" alt=""  class="pcc">
                                     <div>
                                     <h5>Ishimwe</h5>
                                     <small>CEO</small>
@@ -567,22 +726,7 @@ td .status {
                             </div>
                             <div class="People">
                                 <div class="info">
-                                    <img src="nadine.jpg" alt=""  width="20px"  height="20px">
-                                    <div>
-                                    <h5>Ishimwe</h5>
-                                    <small>CEO</small>
-                                    </div>
-                                </div>
-                                <div class="iconi">
-                                    <i class="fas fa-user-circle"></i>
-                                    <i class="fas fa-comment"></i>
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                
-                            </div>
-                            <div class="People">
-                                <div class="info">
-                                    <img src="nadine.jpg" alt=""  width="20px"  height="20px">
+                                    <img src="nadine.jpg" alt=""  class="pcc">
                                     <div>
                                     <h5>Ishimwe</h5>
                                     <small>CEO</small>
@@ -595,10 +739,9 @@ td .status {
                                 </div>
                                 
                             </div>
-
                             <div class="People">
                                 <div class="info">
-                                    <img src="nadine.jpg" alt=""  width="20px"  height="20px">
+                                    <img src="nadine.jpg" alt="" class="pcc">
                                     <div>
                                     <h5>Ishimwe</h5>
                                     <small>CEO</small>
@@ -614,7 +757,23 @@ td .status {
 
                             <div class="People">
                                 <div class="info">
-                                    <img src="nadine.jpg" alt=""  width="20px"  height="20px">
+                                    <img src="nadine.jpg" alt="" class="pcc">
+                                    <div>
+                                    <h5>Ishimwe</h5>
+                                    <small>CEO</small>
+                                    </div>
+                                </div>
+                                <div class="iconi">
+                                    <i class="fas fa-user-circle"></i>
+                                    <i class="fas fa-comment"></i>
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                
+                            </div>
+
+                            <div class="People">
+                                <div class="info">
+                                    <img src="nadine.jpg" alt="" class="pcc">
                                     <div>
                                     <h5>Ishimwe</h5>
                                     <small>CEO</small>

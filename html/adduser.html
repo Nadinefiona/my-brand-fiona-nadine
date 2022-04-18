@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0"> 
+    <meta content="width=device-width,initial-scale=1" name="viewpoint" />
+    <title>dashboard</title>
+   
+    <link
+    href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css"
+    rel="stylesheet"
+  />
+
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.header-title h2{
+
+    display: flex;
+}
+.search-wrapper i{
+    padding-left: .6rem;
+}
+.sidebar{
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(40, 32, 150);
+    z-index: 100;
+    transition: width 300ms;
+}
+.sidebar-brand{
+   height: 50px;
+   padding: 2rem 0rem 4rem 2rem;
+   color: #fff;
+}
+
+.sidebar-brand span{
+    display: inline-block;
+    padding-right: 1rem;
+}
+.sidebar-menu li{
+   width: 100%;
+   margin-bottom: .2rem;
+   padding: .4rem;
+   padding-right: 0;
+}
+.sidebar-menu a{
+    padding-left: 1rem;
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+}
+.sidebar-menu a span:first-child{
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+.active{
+    background-color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: rgb(40, 32, 150); 
+    border-radius: 30px 0px  0px 30px;
+    padding-right: 1px;
+}
+.main-content{
+transition: margin-left 300ms;
+   margin-left: 200px; 
+}
+header  {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 2px  4px 5px rgb(40, 32, 150);
+    z-index: 100;
+     transition:left 300ms; 
+}
+.header-title{
+    display: flex;
+    justify-content: space-between;
+}
+header  label {
+    font-size: 1.5rem;
+    padding-right: .4rem;
+    margin-bottom: 1rem;
+    margin-left: 1px;
+}
+.sidebar-menu{
+    margin-top: 1rem;
+}
+.search-wrapper input{
+   padding: .5rem;
+   height: 100%;
+   border: none;
+   outline: none;
+   
+}
+.search-wrapper{
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+   margin-left: 15rem;
+}
+.search-wrapper span {
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.6rem;
+   
+}
+.user-wrapper{
+    display: flex;
+    align-items: center;
+    padding-left: 18rem;
+}
+.user-wrapper img{
+    border-radius: 50%;
+    margin-right: 2px;
+}
+.user-wrapper small{
+    display: inline-block;
+    color: rgb(40, 32, 150);
+}
+
+#nav-toggle:checked  +  .sidebar{
+    width: 70px;
+}
+#nav-toggle:checked  +  .sidebar .sidebar-brand,
+#nav-toggle:checked  +  .sidebar li  {
+    padding-left: 1rem;
+    text-align: center;
+}
+#nav-toggle:checked  +  .sidebar li a {
+    padding-left: 0rem;
+}
+#nav-toggle:checked  +  .sidebar li a {
+    padding-right: 1rem;
+}
+
+#nav-toggle:checked  +  .sidebar .sidebar-brand h2 span:last-child,
+#nav-toggle:checked  +  .sidebar li a span:last-child{
+  display: none;
+}
+#nav-toggle:checked  ~ .main-content{
+    margin-left: 70px;
+  } 
+#nav-toggle:checked  ~  .main-content header{
+    width: calc(100%  - 70px);
+     left:70px;
+  }
+@media  (max-width:760px){
+    .sidebar{
+        width: 70px;
+    }
+     .sidebar .sidebar-brand,
+     .sidebar li  {
+        padding-left: 1rem;
+        text-align: center;
+    }
+     .sidebar li a {
+        padding-left: 0rem;
+    }
+      .sidebar li a {
+        padding-right: 1rem;
+    }
+
+    
+     .sidebar .sidebar-brand h2 span:last-child,
+     .sidebar li a span:last-child{
+      display: none;
+    }
+    .main-content{
+    margin-left: 70px;
+      } 
+     .main-content header{
+    width: calc(100%  - 70px);
+     left:70px;
+     } 
+     
+}
+@media  (max-width:1000px){
+    .cards{
+        grid-template-columns: 100%;
+    }
+    .user-wrapper{
+
+margin-left: 20rem;
+}
+*{
+    font-size: 1rem;
+
+    margin-left: .1rem;
+}
+   .recent-grid{
+       grid-template-columns: 100%;
+   }
+   .search-wrapper{
+       display: none;
+   }
+   .sidebar{
+       left:-100% !important;
+   }
+   header h2 label{
+       background: rgb(55, 45, 201);
+       padding-left: 0rem;
+       display: inline-block;
+       margin-right: 1rem;
+       justify-content: center !important;
+       height: 40px;
+       width: 40px;
+       align-items: center;
+       border-radius: 50%;
+       color: #fff;
+       display: flex;
+
+   }
+   header  h2 span{
+    text-align: center;
+    padding-right: 0rem;
+   }
+   .main-content{
+     width: 100%;
+     padding-left: 0rem;
+   }
+
+   header{
+       width: 100% !important;
+       left: 0  !important;
+   }
+   header   h2{
+      font-size: 1.1rem;
+   }
+   #nav-toggle:checked +.sidebar{
+       left:0 !important;
+       z-index: 100;
+       width: 330px;
+   }
+}
+@media  (max-width:320px){
+    .sidebar{
+        width: 70px;
+    }
+     .sidebar .sidebar-brand,
+     .sidebar li  {
+        padding-left: 1rem;
+        text-align: center;
+    }
+     .sidebar li a {
+        padding-left: 0rem;
+    }
+      .sidebar li a {
+        padding-right: 1rem;
+    }
+    
+     .sidebar .sidebar-brand h2 span:last-child,
+     .sidebar li a span:last-child{
+      display: none;
+    }
+    .main-content{
+    margin-left: 70px;
+      } 
+     .main-content header{
+    width: calc(100%  - 70px);
+     left:70px;
+     } 
+}
+@media  (max-width:480px){
+    .cards{
+        grid-template-columns: 100%;
+    }
+   .recent-grid{
+       grid-template-columns: 100%;
+   }
+   .search-wrapper{
+       display: none;
+   }
+   .sidebar{
+       left:-100% !important;
+   }
+   header h2 label{
+       background: rgb(55, 45, 201);
+       padding-left: 0rem;
+       display: inline-block;
+       margin-right: 1rem;
+       justify-content: center !important;
+       height: 40px;
+       width: 40px;
+       align-items: center;
+       border-radius: 50%;
+       color: #fff;
+       display: flex;
+
+   }
+   header  h2 span{
+    text-align: center;
+    padding-right: 0rem;
+   }
+   .main-content{
+     width: 100%;
+     padding-left: 0rem;
+   }
+
+   header{
+       width: 100% !important;
+       left: 0  !important;
+   }
+   header   h2{
+      font-size: 1.1rem;
+   }
+   #nav-toggle:checked +.sidebar{
+       left:0 !important;
+       z-index: 100;
+       width: 330px;
+   }
+}
+
+.page{
+    width: 50%;
+   
+    margin-top: 40px;
+    margin-left: 250px;
+    margin-bottom: 30px;
+}
+::placeholder{
+    font-size: small;
+    font-weight: lighter;
+}
+input[type=text],input[type=email]{
+    width:70%;
+    margin: 10px 0;
+    box-sizing:border-box;
+    height:40px;
+    margin-left: 80px;
+    padding-right: 30px;
+    border: 1px  solid rgb(55, 45, 201);
+    border-radius: 5px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    padding-left: 1rem;
+ }
+ input[type=password]{
+    width:70%;
+    margin: 10px 0;
+    box-sizing:border-box;
+    height:40px;
+    margin-left: 80px;
+    padding-right: 30px;
+    border: 1px  solid rgb(55, 45, 201);
+    border-radius: 5px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    padding-left: 1rem;
+ }
+ button{
+    background-color:rgb(55, 45, 201);
+    color: #e5e5e5;
+    border-radius: 15px;
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 80px;
+    font-size: medium;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 80px;
+}
+
+.page h3 {
+     color: rgb(55, 45, 201);
+    text-align: center;
+    padding-top: 40px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 30px;
+}
+@media(max-width:760px){
+    .page{
+        width: 100%;
+    }
+    
+}
+
+.form-control input{
+    display: block;
+}
+.form-control.success input{
+    border:2px solid rgb(4, 252, 4);
+}
+.form-control.error input{
+   border: 2px  solid red;
+}
+.form-control i{
+    position: absolute;
+    margin-top: -40px;
+    right: 350px;
+    visibility: hidden;
+}
+small{
+    margin-left: 5.3rem;
+    top: 0;
+    color: red;
+    visibility: hidden;
+}
+.form-control.success i.fa-check-circle{
+   visibility: visible;
+   color: rgb(4, 252, 4);
+}
+.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: red;
+}
+.form-control.error small{
+    visibility: visible;
+}
+</style>
+</head>
+<body>
+    <input type="checkbox"  id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2 ><i class="fab fa-accusoft"></i><span>N.FIONA</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="main.html"><i class="fas fa-address-book"></i>
+                    <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="users.html"><i class="fas fa-users"></i>
+                    <span>Users</span></a>
+                </li>
+                <li>
+                    <a href="adduser.html"><i class="fas fa-user-plus"></i>
+                    <span>Add user</span></a>
+                </li>
+                <li>
+                    <a href="allpost.html"><i class="fas fa-book-reader"></i>
+                    <span>Posts</span></a>
+                </li>
+               
+
+                <li>
+                    <a href="/html/home.html"><i class="fas fa-sign-out"></i>
+                    <span>Logout</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-title">
+                <h2>
+                    <label for="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                    Dashboard
+                </h2>
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="search">
+                </div>
+                <div class="user-wrapper">
+                    <img src="nadine.jpg" width="40px"   border-radius="90%" height="40px" alt="">
+                    <div>
+                        <h4>N.Fiona</h4>
+                        <small>Owner</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="page">
+            <form class="form"  id="form">
+                <h3>Create new  user</h3>
+                <div class="form-control">
+                    <input type="text" placeholder="Full name" id="name" ></b>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error</small></b>
+                </div>
+                <div class="form-control">
+                    <input type="text" placeholder="Email address" id="email"></b>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error</small></b>
+                </div>
+                <div class="form-control">
+                    <input type="password" placeholder="Password"  id="password"></b>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error</small></b>
+                </div>
+                <button type="submit">Create</button>
+            </form>
+        </nav>
+    </div>
+
+    <script>
+        
+const form  =  document.getElementById('form');
+const email  =  document.getElementById('email');
+const password  =  document.getElementById('password');
+const name  =  document.getElementById('name');
+
+
+form.addEventListener('submit',(e) => {
+    e.preventDefault();
+
+    checkInputs();
+});
+function checkInputs(){
+   const emailValue = email.value.trim();
+   const passwordValue = password.value.trim();
+   const nameValue = name.value.trim();
+
+   if (emailValue  ===  '') {
+       setErrorfor(email,  'Email cannot be blank');
+   }
+
+    else if(!isEmail(emailValue)){
+       setErrorfor(email,'Email is invalid')
+     } 
+    else {
+       setSuccessfor(email);
+   }
+
+   if (passwordValue == '') {
+       setErrorfor(password, 'Password cannot be blank');
+   } else {
+       setSuccessfor(password);
+   }
+
+    if (nameValue == '') {
+       setErrorfor(name, 'name cannot be blank');
+    } else{
+        setSuccessfor(name);
+    }
+}
+function  setErrorfor(input,message){
+  const formControl  = input.parentElement;
+  const small =  formControl.querySelector('small');
+
+
+  small.innerText =  message;
+
+ formControl.className = 'form-control error';
+}
+function setSuccessfor(input){
+    const formControl  = input.parentElement;
+    formControl.className = 'form-control success';
+}
+function  isEmail(email){
+    return /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/ .test(email);
+    
+}
+    </script>
+</body>
+</html>
