@@ -706,31 +706,66 @@ const body  =  document.getElementById('body');
 
 
 form.addEventListener('submit',(e) => {
-    e.preventDefault();
+    
+    if(!checkInputs()){
+        e.preventDefault();
+     }
+    else{
+        e.preventDefault();
+        let url = 'http://localhost:3000/api/posts';
+let data = {
+    "title": title.value,
+    "image": image.value,
+    "body": body.value
+}
+const options = {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'multipart/form-data'
+  }
+}
+fetch(url, options)
+  .then(res => res.json())
+  .then(res => console.log(res)).catch(err => console.log(err));
+    }
+    console.log(checkInputs());
 
-    checkInputs();
 });
 function checkInputs(){
    const titleValue = title.value.trim();
    const imageValue = image.value.trim();
    const bodyValue = body.value.trim();
+   
+   let t =false;
+   let b =false;
+   let i =false;
 
    if (titleValue  ===  '') {
-       setErrorfor(title,  'title cannot be blank');
+       setErrorfor(title, 'title cannot be blank');
    } else {
        setSuccessfor(title);
+       t = true;
    }
 
    if (imageValue == '') {
        setErrorfor(image, 'Please choose image');
    } else {
        setSuccessfor(image);
+       i = true;
    }
 
     if (bodyValue == '') {
        setErrorfor(body, 'body cannot be blank');
     } else {
         setSuccessfor(body);
+        b = true;
+    }
+
+    if (t&&b&&i) {
+        return true;
+    } else {
+        return false;
     }
 }
 function  setErrorfor(input,message){
